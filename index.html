@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="register.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="hobby">Hobbies</label>
+                <select id="hobby" name="hobby[]" multiple required>
+                    <option value="Reading">Reading</option>
+                    <option value="Traveling">Traveling</option>
+                    <option value="Cooking">Cooking</option>
+                    <option value="Gardening">Gardening</option>
+                    <option value="Photography">Photography</option>
+                    <option value="Drawing">Drawing</option>
+                    <option value="Music">Music</option>
+                    <option value="Dancing">Dancing</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Hiking">Hiking</option>
+                    <option value="Fishing">Fishing</option>
+                    <option value="Writing">Writing</option>
+                    <option value="Playing Instruments">Playing Instruments</option>
+                    <option value="Gaming">Gaming</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">New Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        // Simple JavaScript to check if passwords match
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert("Passwords do not match!");
+            }
+        });
+    </script>
+</body>
+</html>
